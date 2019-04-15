@@ -13,7 +13,7 @@ public class Customer {
         private String email;
         private String shipinfo;
         private int ccinfo;
-        private List<Customer> customerdetails = new ArrayList<>();
+        private List<Customer> custDetails = new ArrayList<>();
 
         public Customer(int customerid, String fname, String lname, String password, String address, String email, String shipinfo, int ccinfo) {
             Customerid = customerid;
@@ -35,7 +35,7 @@ public class Customer {
             this.shipinfo = "";
             this.email = "";
             this.password = "";
-            this.customerdetails = new ArrayList<>();
+            this.custDetails = new ArrayList<>();
         }
 
 
@@ -104,12 +104,12 @@ public class Customer {
             this.ccinfo = ccinfo;
         }
 
-        public List<Customer> getCustomerdetails() {
-            return customerdetails;
+        public List<Customer> getCustDetails() {
+            return custDetails;
         }
 
-        public void setCustomerdetails(List<Customer> customerdetails) {
-            this.customerdetails = customerdetails;
+        public void setCustDetails(List<Customer> custDetails) {
+            this.custDetails = custDetails;
         }
 
         @Override
@@ -123,21 +123,21 @@ public class Customer {
                     ", email='" + email + '\'' +
                     ", shipinfo='" + shipinfo + '\'' +
                     ", ccinfo=" + ccinfo +
-                    ", customerdetails=" + customerdetails +
+                    ", custDetails=" + custDetails +
                     '}';
         }
 
 
         public void register(Customer c)
         {
-            this.customerdetails.add(c);
+            this.custDetails.add(c);
         }
 
 
         public boolean checklogin(String email, String pass) {
 
             boolean ch = false;
-            for (Customer c : this.customerdetails) {
+            for (Customer c : this.custDetails) {
 
 
                 if (c.getEmail().equals(email) && c.getPassword().equals(pass)) {
