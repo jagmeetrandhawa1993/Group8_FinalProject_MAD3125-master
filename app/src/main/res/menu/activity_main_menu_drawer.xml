@@ -6,29 +6,29 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_profile"
-            android:icon="@drawable/profile"
+            android:icon="@drawable/profile_techbuy"
             android:title="Profile"
             tools:icon="@drawable/profile" />
         <item
             android:id="@+id/nav_products"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/products_techbuy"
             android:title="Products" />
         <item
             android:id="@+id/nav_cart"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/cart"
             android:title="View cart" />
         <item
             android:id="@+id/nav_orders"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/orders_android"
             android:title="View orders" />
-    <item
-                android:id="@+id/nav_help"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Help" />
-    <item
-        android:id="@+id/nav_contactus"
-        android:icon="@drawable/ic_menu_share"
-        android:title="Contact us" />
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@android:drawable/ic_menu_help"
+            android:title="Help" />
+        <item
+            android:id="@+id/nav_contactus"
+            android:icon="@android:drawable/ic_menu_call"
+            android:title="Contact us" />
             <item
                 android:id="@+id/nav_logout"
                 android:icon="@drawable/ic_menu_send"
