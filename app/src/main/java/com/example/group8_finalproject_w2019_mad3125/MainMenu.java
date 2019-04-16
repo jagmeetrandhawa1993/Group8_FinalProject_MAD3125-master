@@ -87,17 +87,20 @@ public class MainMenu extends AppCompatActivity
         if (id == R.id.nav_profile) {
             // Handle the camera action
         } else if (id == R.id.nav_products) {
-            Fragment fragment =new Fragment();
+           /* Fragment fragment =new Fragment();
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft= fm.beginTransaction();
             ft.replace(R.id.fragProduct,fragment);
             ft.commit();
-
+*/
         } else if (id == R.id.nav_cart) {
 
         } else if (id == R.id.nav_orders) {
 
         } else if (id == R.id.nav_help) {
+            Intent mIntent = new Intent(MainMenu.this,Help.class);
+            startActivity(mIntent);
+
         } else if (id == R.id.nav_contactus) {
             Intent mIntent = new Intent(MainMenu.this,ContactUs.class);
             startActivity(mIntent);
