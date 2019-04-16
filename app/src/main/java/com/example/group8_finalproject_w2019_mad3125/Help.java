@@ -22,7 +22,7 @@ public class Help extends AppCompatActivity {
 
         webView = findViewById(R.id.webView);
 
-        WebViewClient mWebViewClient = new WebViewClient();
+       // WebViewClient mWebViewClient = new WebViewClient();
 
         AssetManager mAssetManager = this.getAssets();
         try

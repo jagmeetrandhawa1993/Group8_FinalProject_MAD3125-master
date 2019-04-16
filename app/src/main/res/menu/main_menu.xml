@@ -3,7 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/action_settings"
+        android:icon="@android:drawable/ic_dialog_email"
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+    <item
+        android:checkable="false"
+        android:enabled="true"
+        android:icon="@drawable/logout_techbuy"
+        android:title="Item"
+        android:visible="true" />
+    <item
+        android:icon="@android:drawable/stat_sys_speakerphone"
+        android:title="Item" />
 </menu>

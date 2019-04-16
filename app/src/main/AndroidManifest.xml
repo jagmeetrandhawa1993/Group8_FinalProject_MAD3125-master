@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Help"></activity>
+        <activity android:name=".ProductDetails"></activity>
+        <activity android:name=".Products" />
+        <activity android:name=".Help" />
         <activity android:name=".ContactUs" />
         <activity
             android:name=".MainMenu"
@@ -22,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Signup" />
-        <activity android:name=".Splash"></activity>
+        <activity android:name=".Splash" />
         <activity android:name=".Login" />
     </application>
 
