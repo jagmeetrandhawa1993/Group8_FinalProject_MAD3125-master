@@ -2,11 +2,9 @@ package com.example.group8_finalproject_w2019_mad3125;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,7 +12,7 @@ import android.widget.EditText;
 import com.example.group8_finalproject_w2019_mad3125.Modal.Customer;
 
 public class Login extends AppCompatActivity {
-    Customer cs = new Customer();
+    Customer customer =Customer.getInstance();
     private EditText eduid;
     private EditText epass;
     private Button btnlogin;
@@ -29,8 +27,8 @@ public class Login extends AppCompatActivity {
         epass = findViewById(R.id.txtpass);
         btnlogin = findViewById(R.id.btnlogin);
         btnSignup = findViewById(R.id.btnSignup);
-        Customer c1 = new Customer(11, "Gurminder", "Kaur", "123", "toronto", "gur@gmail.com", "etobicoke", 123456);
-        cs.register(c1);
+        //Customer c1 = new Customer(11, "Gurminder", "123", "toronto", "gur@gmail.com", "123456");
+        //customer.register(c1);
 
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
@@ -39,7 +37,7 @@ public class Login extends AppCompatActivity {
 
                 String email = eduid.getText().toString();
                 String password = epass.getText().toString();
-                boolean check = cs.checklogin(email, password);
+                boolean check = customer.checklogin(email, password);
                 if (check == true) {
                     Intent LoginIntent = new Intent(Login.this, MainMenu.class);
                     startActivity(LoginIntent);

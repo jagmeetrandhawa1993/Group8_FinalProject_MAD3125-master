@@ -1,43 +1,51 @@
 package com.example.group8_finalproject_w2019_mad3125.Modal;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Customer {
+    private static Customer cust=new Customer();
+    public static Customer getInstance( )
+    {
+        return cust;
+    }
 
         private int Customerid;
         private String fname;
-        private String lname;
         private String password;
         private String address;
         private String email;
-        private String shipinfo;
-        private int ccinfo;
+        private String creditinfo;
         private List<Customer> custDetails = new ArrayList<>();
 
-        public Customer(int customerid, String fname, String lname, String password, String address, String email, String shipinfo, int ccinfo) {
+        public Customer(int customerid, String fname,String password, String address, String email,String creditinfo) {
             Customerid = customerid;
             this.fname = fname;
-            this.lname = lname;
             this.password = password;
             this.address = address;
             this.email = email;
-            this.shipinfo = shipinfo;
-            this.ccinfo = ccinfo;
+            this.creditinfo = creditinfo;
 
         }
 
         public Customer() {
             this.fname = "";
-            this.lname = "";
             this.address = "";
-            this.ccinfo = 0;
-            this.shipinfo = "";
+            this.creditinfo ="";
             this.email = "";
             this.password = "";
             this.custDetails = new ArrayList<>();
         }
 
+        public static Customer getCust() {
+        return cust;
+        }
+
+        public static void setCust(Customer cust) {
+        Customer.cust = cust;
+        }
 
 
         public int getCustomerid() {
@@ -56,13 +64,7 @@ public class Customer {
             this.fname = fname;
         }
 
-        public String getLname() {
-            return lname;
-        }
 
-        public void setLname(String lname) {
-            this.lname = lname;
-        }
 
         public String getPassword() {
             return password;
@@ -88,20 +90,14 @@ public class Customer {
             this.email = email;
         }
 
-        public String getShipinfo() {
-            return shipinfo;
+
+
+        public String getCreditinfo() {
+            return creditinfo;
         }
 
-        public void setShipinfo(String shipinfo) {
-            this.shipinfo = shipinfo;
-        }
-
-        public int getCcinfo() {
-            return ccinfo;
-        }
-
-        public void setCcinfo(int ccinfo) {
-            this.ccinfo = ccinfo;
+        public void setCreditinfo(String creditinfo) {
+            this.creditinfo = creditinfo;
         }
 
         public List<Customer> getCustDetails() {
@@ -117,12 +113,10 @@ public class Customer {
             return "Customer{" +
                     "Customerid=" + Customerid +
                     ", fname='" + fname + '\'' +
-                    ", lname='" + lname + '\'' +
                     ", password='" + password + '\'' +
                     ", address='" + address + '\'' +
                     ", email='" + email + '\'' +
-                    ", shipinfo='" + shipinfo + '\'' +
-                    ", ccinfo=" + ccinfo +
+                    ", creditinfo=" + creditinfo +
                     ", custDetails=" + custDetails +
                     '}';
         }
@@ -130,6 +124,11 @@ public class Customer {
 
         public void register(Customer c)
         {
+            for (Customer c1:this.custDetails)
+            {
+                Log.d("userdata",c1.getEmail());
+                }
+
             this.custDetails.add(c);
         }
 
@@ -142,10 +141,10 @@ public class Customer {
 
                 if (c.getEmail().equals(email) && c.getPassword().equals(pass)) {
                     ch = true;
-                    //break;
+
                 } else {
                     ch = false;
-                    // break;
+
                 }
             }
             return ch;

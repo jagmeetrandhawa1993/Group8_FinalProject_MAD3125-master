@@ -10,15 +10,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.group8_finalproject_w2019_mad3125.Modal.Customer;
+
+import java.util.Random;
+
 public class Signup extends AppCompatActivity {
 
-
+    Customer customer=Customer.getInstance();
     private EditText editTextname;
-    private EditText editTextid;
+    private EditText editTextemail;
     private EditText editTextpassword;
     private EditText editTextaddress;
     private EditText editTextCardInfo;
     private Button btnsignup;
+
 
 
     @Override
@@ -28,12 +33,26 @@ public class Signup extends AppCompatActivity {
 
 
         editTextname = findViewById(R.id.edtName);
-        editTextid = findViewById(R.id.editemail);
+        editTextemail = findViewById(R.id.editemail);
         editTextpassword = findViewById(R.id.edtPassword);
         editTextaddress = findViewById(R.id.editAddress);
         editTextCardInfo = findViewById(R.id.editcard);
 
         btnsignup = findViewById(R.id.btnsignup);
+        btnsignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Random random=new Random();
+                int r= random.nextInt(10);
+                //Toast.makeText(Signup.this,editTextname.getText().toString(),Toast.LENGTH_SHORT).show();
+
+                Customer cust=new Customer(r,editTextname.getText().toString(),editTextpassword.getText().toString() ,editTextaddress.getText().toString(),editTextemail.getText().toString(),editTextCardInfo.getText().toString());
+                customer.register(cust);
+                Intent LoginIntent = new Intent(Signup.this, Login.class);
+                startActivity(LoginIntent);
+
+            }
+        });
 
 
     }
