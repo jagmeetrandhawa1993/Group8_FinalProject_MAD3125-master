@@ -27,8 +27,8 @@ public class Login extends AppCompatActivity {
         epass = findViewById(R.id.txtpass);
         btnlogin = findViewById(R.id.btnlogin);
         btnSignup = findViewById(R.id.btnSignup);
-        //Customer c1 = new Customer(11, "Gurminder", "123", "toronto", "gur@gmail.com", "123456");
-        //customer.register(c1);
+        Customer c1 = new Customer(11, "Gurminder", "123", "toronto", "gur@gmail.com", "123456");
+        customer.register(c1);
 
 
         btnlogin.setOnClickListener(new View.OnClickListener() {

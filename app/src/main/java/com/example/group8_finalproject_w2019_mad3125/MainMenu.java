@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -84,6 +87,11 @@ public class MainMenu extends AppCompatActivity
         if (id == R.id.nav_profile) {
             // Handle the camera action
         } else if (id == R.id.nav_products) {
+            Fragment fragment =new Fragment();
+            FragmentManager fm = getSupportFragmentManager();
+            FragmentTransaction ft= fm.beginTransaction();
+            ft.replace(R.id.fragProduct,fragment);
+            ft.commit();
 
         } else if (id == R.id.nav_cart) {
 

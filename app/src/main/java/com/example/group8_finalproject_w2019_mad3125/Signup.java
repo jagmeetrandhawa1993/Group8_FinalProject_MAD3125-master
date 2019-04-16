@@ -17,12 +17,13 @@ import java.util.Random;
 public class Signup extends AppCompatActivity {
 
     Customer customer=Customer.getInstance();
+
     private EditText editTextname;
     private EditText editTextemail;
     private EditText editTextpassword;
     private EditText editTextaddress;
     private EditText editTextCardInfo;
-    private Button btnsignup;
+    private Button   btnsignup;
 
 
 
@@ -44,10 +45,8 @@ public class Signup extends AppCompatActivity {
             public void onClick(View v) {
                 Random random=new Random();
                 int r= random.nextInt(10);
-                //Toast.makeText(Signup.this,editTextname.getText().toString(),Toast.LENGTH_SHORT).show();
-
-                Customer cust=new Customer(r,editTextname.getText().toString(),editTextpassword.getText().toString() ,editTextaddress.getText().toString(),editTextemail.getText().toString(),editTextCardInfo.getText().toString());
-                customer.register(cust);
+                //Customer cust=new Customer(r,editTextname.getText().toString(),editTextpassword.getText().toString() ,editTextaddress.getText().toString(),editTextemail.getText().toString(),editTextCardInfo.getText().toString());
+                //customer.register(cust);
                 Intent LoginIntent = new Intent(Signup.this, Login.class);
                 startActivity(LoginIntent);
 
