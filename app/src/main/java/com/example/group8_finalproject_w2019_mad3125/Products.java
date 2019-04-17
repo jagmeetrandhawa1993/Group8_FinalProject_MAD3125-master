@@ -54,9 +54,9 @@ public class Products extends AppCompatActivity {
     public void getItems()
     {
         productsArrayList = new ArrayList<>();
-        productsArrayList.add(new Prod("P1","Laptop","2000","Intel core, i5, 4GB RAM"));
-        productsArrayList.add(new Prod("P2","Mouse","10","Wireless mouse"));
-        productsArrayList.add(new Prod("P3","Printer","500","Intel core, i5, 4GB RAM"));
+        productsArrayList.add(new Prod("P1","Laptop","2000","laptop"));
+        productsArrayList.add(new Prod("P2","Mouse","10","mouse_techbuy"));
+       /* productsArrayList.add(new Prod("P3","Printer","500","Intel core, i5, 4GB RAM"));
         productsArrayList.add(new Prod("P4","USB","20","Intel core, i5, 4GB RAM"));
         productsArrayList.add(new Prod("P5","Hard Disk","1000","Intel core, i5, 4GB RAM"));
         productsArrayList.add(new Prod("P6","Floppy Disk","30","Intel core, i5, 4GB RAM"));
@@ -64,5 +64,6 @@ public class Products extends AppCompatActivity {
         productsArrayList.add(new Prod("P8","Monitor","750","Intel core, i5, 4GB RAM"));
         productsArrayList.add(new Prod("P9","Keyboard","300","Intel core, i5, 4GB RAM"));
         productsArrayList.add(new Prod("P10","Data cable","10","Intel core, i5, 4GB RAM"));
+    */
     }
 }
