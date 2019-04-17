@@ -7,14 +7,14 @@ public class Prod implements Serializable {
     private String productId;
     private String name;
     private String price;
-    private  String desc;
+    private  String img;
 
 
-    public Prod(String productId, String name, String price, String desc) {
+    public Prod(String productId, String name, String price, String img) {
         this.productId = productId;
         this.name = name;
         this.price = price;
-        this.desc = desc;
+        this.img = img;
     }
 
     public String getProductId() {
@@ -33,20 +33,20 @@ public class Prod implements Serializable {
         this.name = name;
     }
 
-    public String getQuantity() {
+    public String getPrice() {
         return price;
     }
 
-    public void setQuantity(String quantity) {
-        this.price = quantity;
+    public void setPrice(String price) {
+        this.price = price;
     }
 
     public String getImg() {
-        return desc;
+        return img;
     }
 
     public void setImg(String img) {
-        this.desc = img;
+        this.img = img;
     }
 
     @Override
@@ -55,7 +55,7 @@ public class Prod implements Serializable {
                 "productId='" + productId + '\'' +
                 ", name='" + name + '\'' +
                 ", quantity='" + price + '\'' +
-                ", img='" + desc + '\'' +
+                ", img='" + img + '\'' +
                 '}';
     }
 

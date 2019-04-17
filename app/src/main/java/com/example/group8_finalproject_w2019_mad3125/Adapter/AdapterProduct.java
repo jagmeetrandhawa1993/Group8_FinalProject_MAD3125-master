@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.group8_finalproject_w2019_mad3125.Modal.Prod;
@@ -45,6 +46,18 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.Holder> 
 
         myviewholder.txtproductname.setText(p.getName());
 
+      // int imageId = mcontext.getResources().getIdentifier(p.getImg(),"drawable", mcontext.getPackageName());
+
+      //  myviewholder.proimg1.setImageResource(imageId);
+        myviewholder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(mcontext, ProductDetails.class);
+                i.putExtra("productdetails",p);
+                mcontext.startActivity(i);
+            }
+        });
+
     }
 
     @Override
@@ -55,13 +68,13 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.Holder> 
     public class Holder extends RecyclerView.ViewHolder
     {
        // public ImageView productImage ;
-       // public ImageView img1;
+        public ImageView proimg1;
         private TextView txtproductname;
 
         public Holder(View itemView) {
             super(itemView);
 
-           // productImage=(ImageView) itemView.findViewById(R.id.imageView);
+            proimg1=(ImageView) itemView.findViewById(R.id.proImg);
             txtproductname=(TextView) itemView.findViewById(R.id.textViewProducts);
 
         }
