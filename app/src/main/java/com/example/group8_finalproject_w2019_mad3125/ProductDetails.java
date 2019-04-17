@@ -22,20 +22,16 @@ public class ProductDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_details);
-
+        getSupportActionBar().setTitle("Product Details");
         productId=findViewById(R.id.textViewId);
         productName=findViewById(R.id.textViewName);
         productPrice=findViewById(R.id.textViewPrice);
-
-        //qty=findViewById(R.id.txtqty);
         productImage=findViewById(R.id.proImg);
-       // qty.setFilters(new InputFilter[]{ new MinMaxFilter("1", "5")});
         Intent i=getIntent();
-        Prod p = (Prod) i.getExtras().getSerializable("pdetails");
+        Prod p = (Prod) i.getExtras().getSerializable("productdetails");
         productId.setText("Product ID::"+p.getProductId());
         productName.setText("Product Name::"+p.getName());
         productPrice.setText("Price:$:"+p.getPrice());
-       // desc.setText("Description:"+probj.getDescription());
         int imageId = this.getResources().getIdentifier(p.getImg(),"drawable", this.getPackageName());
         this.productImage.setImageResource(imageId);
 

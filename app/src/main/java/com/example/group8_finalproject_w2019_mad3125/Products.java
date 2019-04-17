@@ -24,46 +24,34 @@ public class Products extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_products);
-        getItems();
-
-        productList =findViewById(R.id.recyclerView);
-
         getSupportActionBar().setTitle("Products");
+        getItems();
+        productList =findViewById(R.id.recyclerView);
         prodname = new ArrayList<>();
        for (Prod str : productsArrayList) {
             prodname.add(str.getName());
-           // prodname.add(str.getName());
+            prodname.add(str.getImg());
         }
 
         mAdapter = new AdapterProduct(productsArrayList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         productList.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
-        //recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL, 16));
         productList.setHasFixedSize(false);
         productList.setLayoutManager(mLayoutManager);
         productList.setItemAnimator(new DefaultItemAnimator());
         productList.setAdapter(mAdapter);
-
         mAdapter.notifyDataSetChanged();
-
-
-
 
     }
 
     public void getItems()
     {
         productsArrayList = new ArrayList<>();
-        productsArrayList.add(new Prod("P1","Laptop","2000","laptop"));
+        productsArrayList.add(new Prod("P1","Phone","2000","phone5t"));
         productsArrayList.add(new Prod("P2","Mouse","10","mouse_techbuy"));
-       /* productsArrayList.add(new Prod("P3","Printer","500","Intel core, i5, 4GB RAM"));
-        productsArrayList.add(new Prod("P4","USB","20","Intel core, i5, 4GB RAM"));
-        productsArrayList.add(new Prod("P5","Hard Disk","1000","Intel core, i5, 4GB RAM"));
-        productsArrayList.add(new Prod("P6","Floppy Disk","30","Intel core, i5, 4GB RAM"));
-        productsArrayList.add(new Prod("P7","CPU","600","Intel core, i5, 4GB RAM"));
-        productsArrayList.add(new Prod("P8","Monitor","750","Intel core, i5, 4GB RAM"));
-        productsArrayList.add(new Prod("P9","Keyboard","300","Intel core, i5, 4GB RAM"));
-        productsArrayList.add(new Prod("P10","Data cable","10","Intel core, i5, 4GB RAM"));
-    */
+        productsArrayList.add(new Prod("P3","Macbook","500","macbook"));
+        productsArrayList.add(new Prod("P4","One Plus","20","phone"));
+        productsArrayList.add(new Prod("P5","Headphones","1000","headphones"));
+
     }
 }

@@ -7,7 +7,7 @@ public class Prod implements Serializable {
     private String productId;
     private String name;
     private String price;
-    private  String img;
+    private String img;
 
 
     public Prod(String productId, String name, String price, String img) {
