@@ -40,6 +40,7 @@ public class Login extends AppCompatActivity {
                 boolean check = customer.checklogin(email, password);
                 if (check == true) {
                     Intent LoginIntent = new Intent(Login.this, MainMenu.class);
+                    LoginIntent.putExtra("email",email);
                     startActivity(LoginIntent);
                 } else {
 

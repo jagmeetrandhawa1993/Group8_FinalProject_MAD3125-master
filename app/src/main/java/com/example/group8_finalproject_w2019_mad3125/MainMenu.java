@@ -1,5 +1,6 @@
 package com.example.group8_finalproject_w2019_mad3125;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,6 +8,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -85,8 +87,11 @@ public class MainMenu extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_profile) {
-            // Handle the camera action
-        } else if (id == R.id.nav_products) {
+            Intent mIntent = new Intent(MainMenu.this, Profile.class);
+
+            startActivity(mIntent);
+        }
+        else if (id == R.id.nav_products) {
 
 
             Intent mIntent = new Intent(MainMenu.this,Products.class);
@@ -101,9 +106,19 @@ public class MainMenu extends AppCompatActivity
             startActivity(mIntent);
 
         } else if (id == R.id.nav_contactus) {
-            Intent mIntent = new Intent(MainMenu.this,ContactUs.class);
-            startActivity(mIntent);
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                    this);
 
+            alertDialogBuilder.setTitle("Contact Us: 1234567890");
+            alertDialogBuilder
+
+                    .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
         } else if (id == R.id.nav_logout) {
             Intent mIntent = new Intent(MainMenu.this,Splash.class);
             startActivity(mIntent);
