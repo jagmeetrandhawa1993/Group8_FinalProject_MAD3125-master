@@ -1,6 +1,8 @@
 package com.example.group8_finalproject_w2019_mad3125;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputFilter;
@@ -47,9 +49,24 @@ public class ProductDetails extends AppCompatActivity {
                 double qq=Double.valueOf(q.getText().toString());
                 Cart addcart=new Cart(p.getName(),p.getProductId(),q.getText().toString(),Double.valueOf(p.getPrice()),total,p.getImg());
                 c.addtocart(addcart);
-                Intent LoginIntent = new Intent(ProductDetails.this, MainMenu.class);
 
-                startActivity(LoginIntent);
+                  AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(ProductDetails.this);
+
+            alertDialogBuilder.setTitle("Move item to cart");
+            alertDialogBuilder
+
+                    .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            Intent LoginIntent = new Intent(ProductDetails.this, Products.class);
+
+                            startActivity(LoginIntent);
+                            dialog.cancel();
+                        }
+                    });
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
+
+
             }
         });
 
