@@ -23,14 +23,14 @@ import android.widget.Toast;
 
 import com.example.group8_finalproject_w2019_mad3125.R;
 
-//import butterknife.BindView;
-//import butterknife.ButterKnife;
-//import butterknife.OnClick;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 
 public class FragmentSms extends Fragment {
 
- /*   @BindView(R.id.input_phone_number)
+    @BindView(R.id.input_phone_number)
     EditText inputPhoneNumber;
     @BindView(R.id.input_layout_phone_number)
     TextInputLayout inputLayoutPhoneNumber;
@@ -110,5 +110,5 @@ public class FragmentSms extends Fragment {
         }
 
     }
-    */
+
 }

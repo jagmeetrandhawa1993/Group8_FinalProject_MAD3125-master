@@ -106,7 +106,7 @@ public class MainMenu extends AppCompatActivity
             startActivity(mIntent);
 
         } else if (id == R.id.nav_contactus) {
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+           /* AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                     this);
 
             alertDialogBuilder.setTitle("Contact Us: 1234567890");
@@ -119,6 +119,10 @@ public class MainMenu extends AppCompatActivity
                     });
             AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.show();
+            */
+            Intent mIntent = new Intent(MainMenu.this,ContactUs.class);
+            startActivity(mIntent);
+
         } else if (id == R.id.nav_logout) {
             Intent mIntent = new Intent(MainMenu.this,Splash.class);
             startActivity(mIntent);
