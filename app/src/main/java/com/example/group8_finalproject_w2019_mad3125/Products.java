@@ -13,6 +13,8 @@ import com.example.group8_finalproject_w2019_mad3125.Modal.Prod;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.group8_finalproject_w2019_mad3125.ProductDetails.c;
+
 public class Products extends AppCompatActivity {
 
     private List<Prod> productsArrayList;

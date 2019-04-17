@@ -60,7 +60,7 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.Holder> 
 
     public class Holder extends RecyclerView.ViewHolder
     {
-        public ImageView proimg1;
+        private ImageView proimg1;
         private TextView txtproductname;
 
         public Holder(View itemView) {

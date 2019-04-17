@@ -91,21 +91,33 @@ public class MainMenu extends AppCompatActivity
 
             startActivity(mIntent);
         }
-        else if (id == R.id.nav_products) {
+        else if (id == R.id.nav_products)
+        {
 
 
             Intent mIntent = new Intent(MainMenu.this,Products.class);
             startActivity(mIntent);
 
-        } else if (id == R.id.nav_cart) {
+        }
 
-        } else if (id == R.id.nav_orders) {
+        else if (id == R.id.nav_cart)
+        {
+            Intent mIntent = new Intent(MainMenu.this,CartDetails.class);
+            startActivity(mIntent);
+        }
 
-        } else if (id == R.id.nav_help) {
+        else if (id == R.id.nav_orders)
+        {
+
+        }
+        else if (id == R.id.nav_help)
+        {
             Intent mIntent = new Intent(MainMenu.this,Help.class);
             startActivity(mIntent);
 
-        } else if (id == R.id.nav_contactus) {
+        }
+        else if (id == R.id.nav_contactus)
+        {
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                     this);
 
@@ -119,7 +131,9 @@ public class MainMenu extends AppCompatActivity
                     });
             AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.show();
-        } else if (id == R.id.nav_logout) {
+
+        }
+        else if (id == R.id.nav_logout) {
             Intent mIntent = new Intent(MainMenu.this,Splash.class);
             startActivity(mIntent);
 
