@@ -45,28 +45,48 @@ public class ProductDetails extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                double total = Double.valueOf(p.getPrice())*Double.valueOf(q.getText().toString()) ;
-                double qq=Double.valueOf(q.getText().toString());
-                Cart addcart=new Cart(p.getName(),p.getProductId(),q.getText().toString(),Double.valueOf(p.getPrice()),total,p.getImg());
-                c.addtocart(addcart);
-
-                  AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(ProductDetails.this);
-
-            alertDialogBuilder.setTitle("Move item to cart");
-            alertDialogBuilder
-
-                    .setNegativeButton("OK", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            Intent LoginIntent = new Intent(ProductDetails.this, Products.class);
-
-                            startActivity(LoginIntent);
-                            dialog.cancel();
-                        }
-                    });
-            AlertDialog alertDialog = alertDialogBuilder.create();
-            alertDialog.show();
+                double total = Double.valueOf(p.getPrice()) * Double.valueOf(q.getText().toString());
 
 
+                double qq = Double.valueOf(q.getText().toString());
+
+
+                if (qq > 5) {
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(ProductDetails.this);
+
+                    alertDialogBuilder.setTitle(" You can not add more than 5 items");
+                    alertDialogBuilder
+
+                            .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+
+                                    dialog.cancel();
+                                }
+                            });
+                    AlertDialog alertDialog = alertDialogBuilder.create();
+                    alertDialog.show();
+
+
+                } else {
+                    Cart addcart = new Cart(p.getName(), p.getProductId(), q.getText().toString(), Double.valueOf(p.getPrice()), total, p.getImg());
+                    c.addtocart(addcart);
+
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(ProductDetails.this);
+
+                    alertDialogBuilder.setTitle("Move item to cart");
+                    alertDialogBuilder
+
+                            .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    Intent LoginIntent = new Intent(ProductDetails.this, Products.class);
+
+                                    startActivity(LoginIntent);
+                                    dialog.cancel();
+                                }
+                            });
+                    AlertDialog alertDialog = alertDialogBuilder.create();
+                    alertDialog.show();
+                }
             }
         });
 
